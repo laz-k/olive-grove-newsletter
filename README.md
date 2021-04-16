@@ -1,0 +1,1 @@
+A sign-up form to a newsletter built with node.
