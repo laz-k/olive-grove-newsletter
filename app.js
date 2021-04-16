@@ -33,26 +33,17 @@ app.post("/", (req, res) => {
 			},
       
 		});
-    data = response
+
 	};
   
 	run();
-  // if(data.body.status != 200){
-  // res.sendFile(`${__dirname}/error.html`);
-  // }
-  console.log(data)
-  // console.log(`------------${res.statusCode}--------------`)
-	// if (res.statusCode === 200) {
-  //   res.sendFile(`${__dirname}/success.html`);
-	// } else {
-  //   res.sendFile(`${__dirname}/error.html`);
-	// }
+
+	if (res.statusCode === 200) {
+    res.sendFile(`${__dirname}/success.html`);
+	} else {
+    res.sendFile(`${__dirname}/error.html`);
+	}
 });
 
 app.listen(3000, () => console.log(`Example app listening on port 3000`));
 
-console.log(data)
-
-
-// List id
-// 8832825dae
