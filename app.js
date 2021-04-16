@@ -1,5 +1,6 @@
 const express = require("express");
 const client = require("@mailchimp/mailchimp_marketing");
+require('dotenv').config();
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.post("/", (req, res) => {
 	const email = req.body.email;
 
 	client.setConfig({
-		apiKey: "98ca6213e3bb6a1a8a0e58e34ed33386-us1",
+		apiKey: process.env.API_KEY,
 		server: "us1",
 	});
 
@@ -51,8 +52,7 @@ app.post("/", (req, res) => {
 app.listen(3000, () => console.log(`Example app listening on port 3000`));
 
 console.log(data)
-//API Key
-// 98ca6213e3bb6a1a8a0e58e34ed33386-us1
+
 
 // List id
 // 8832825dae
